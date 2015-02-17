@@ -4,19 +4,67 @@
 </head>
 <body>
 
-<h1>Welcome to Jeopardy!</h1>
+	<h1>Welcome to Jeopardy!</h1>
+	<!-- method to parse api results -->
+	<% def render_results(response) %> 
+	<strong><%= response["title"].upcase %></strong> </br>
+	<% category_id = response["id"] %></br>
+	
+	<% response["clues"].each do |question| %>	
+	<% question_number = 0 %>
+	<% question_mask_number = 0 %>
+	<% value_number = 0 %>
 
-<h2>Choose a difficulty level:</h2>
-<button id="level1_btn">$100</button>
-<button id="level2_btn">$200</button>
-<button id="level3_btn">$300</button>
-<button id="level4_btn">$400</button>
-<button id="level5_btn">$500</button>
-<button id="level6_btn">$600</button>
-<button id="level7_btn">$700</button>
-<button id="level8_btn">$800</button>
-<button id="level9_btn">$900</button>
-<button id="level10_btn">$1000</button>
 
+	<% whole_question_id = "question_id_ question_number += 1" %>
+	<% individual_question_id = "question_id_+ question_mask_number += 1"%>
+	<% value_id = "value_id_"%> <%= value_number += 1%>
+
+	<%= value_id %>
+
+
+	<!-- split answer into an array of words and downcase them -->
+	<% answer = question["answer"].downcase.split(" ") %>
+	
+	<!-- give each question mask the same class name as the question itself -->
+	<div class="whole_question <% whole_question_id %>">	
+	<!-- show the word "question" instead of the actual question -->
+		<h2 class="<% whole_question_id %>">QUESTION</h2>
+		<div class="value">	
+			<h3 class="<%whole_question_id%> value">Value: $<%= question["value"] %></h3></br>
+		</div>
+		<!-- give each question a unique id that increments from 0	 -->
+		<div class="individual_question <%individual_question_id%>">
+			<h2 class="individual_question_id"><%= question["question"] %></br></h2>
+			<h3>This answer contains <%= answer.length %> <%= answer.length == 1 ? "word" : "words"%></h3>
+			<input type="text" id="user_answer" placeholder="ANSWER HERE">
+			<button id="submit_answer_button">Final Answer!</button>
+
+
+		</div>
+	</div>
+<!-- answer- is hidden by default via jquery -->
+	<div class="hidden_answer">
+		<% answer.each do |word| %>
+		<!-- remove any html tags, remove all punctuation marks -->
+		<% word = word.gsub(/(<\/?[a-zA-Z]+>)|[\?\,\.\/\(\)\\\"]+i|/i, "")%>
+		<!-- replace & with 'and' -->
+		<%word = word.gsub(/&/, "and")%>	
+		<div class="revealed_answer">
+		</div>
+		<% end %>
+<!-- rejoin answer into a string -->
+		<%revealed_answer = answer.join(" ") %>
+		<%= revealed_answer %>
+	</div>
+	<% end %>
+	<% end %>
+<!-- call the method -->
+	<%render_results(@response) %>
+	<%render_results(@response2) %>
+	<%render_results(@response3) %>
+
+	<h2 id="running_score">Running Score: </h2> 
+	<h2 id="total_score">Total Score: </h2>
 </body>
 </html>

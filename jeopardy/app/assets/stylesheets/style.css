@@ -6,7 +6,7 @@ body {
 
 .form-signin {
   max-width: 330px;
-  padding: 15px;
+  padding: 15px;  
   margin: 0 auto;
 }
 .form-signin .form-signin-heading,
@@ -39,6 +39,37 @@ body {
   border-top-right-radius: 0;
 }
 
+
+ /*<-------------------------Bootstrap End---------------------------------->*/
 h1 {
   text-align: center;
 }
+
+.hidden_answer {
+}
+
+.value {
+  padding: 5px;
+  width: 100px;
+  margin: 5px;
+  border: solid black 2px;
+}
+
+.question {
+  padding: 5px;
+  margin: 5px;
+  border: solid red 2px;
+}
+
+.whole_question {
+  padding: 5px;
+  width: 200px;
+  margin: 5px;
+  border: solid black 2px;
+}
+
+.individual_question {
+  width: 200px;
+  margin: 5px;
+}
+
