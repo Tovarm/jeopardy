@@ -5,8 +5,30 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  get '/games' => 'games#index'
-  post '/games' => 'games#create'
+resources :games
+resources :contestants
+
+
+
+#          Prefix Verb   URI Pattern                     Controller#Action
+#            root GET    /                               welcome#index
+#           games GET    /games(.:format)                games#index
+#                 POST   /games(.:format)                games#create
+#        new_game GET    /games/new(.:format)            games#new
+#       edit_game GET    /games/:id/edit(.:format)       games#edit
+#            game GET    /games/:id(.:format)            games#show
+#                 PATCH  /games/:id(.:format)            games#update
+#                 PUT    /games/:id(.:format)            games#update
+#                 DELETE /games/:id(.:format)            games#destroy
+#     contestants GET    /contestants(.:format)          contestants#index
+#                 POST   /contestants(.:format)          contestants#create
+#  new_contestant GET    /contestants/new(.:format)      contestants#new
+# edit_contestant GET    /contestants/:id/edit(.:format) contestants#edit
+#      contestant GET    /contestants/:id(.:format)      contestants#show
+#                 PATCH  /contestants/:id(.:format)      contestants#update
+#                 PUT    /contestants/:id(.:format)      contestants#update
+#                 DELETE /contestants/:id(.:format)      contestants#destroy
+
 
 
   # Example of regular route:

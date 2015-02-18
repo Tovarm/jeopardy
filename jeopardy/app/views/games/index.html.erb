@@ -4,67 +4,63 @@
 </head>
 <body>
 
-	<h1>Welcome to Jeopardy!</h1>
+	<h1>Jeopardy!</h1>
+	<h2>Welcome [user]!</h2>
+	<h2 id="status">You're on turn number <span id="which_round"> </span>!</h2>
 	<!-- method to parse api results -->
 	<% def render_results(response) %> 
-	<strong><%= response["title"].upcase %></strong> </br>
-	<% category_id = response["id"] %></br>
-	
-	<% response["clues"].each do |question| %>	
-	<% question_number = 0 %>
-	<% question_mask_number = 0 %>
-	<% value_number = 0 %>
+		<h3>CATEGORY:</h3>
+		<strong><%= response["title"].upcase %></strong> </br>
+		<%# category_id = response["id"] %></br>
+		
+		<div class="question_answer_pair">	
+			<% response["clues"].each do |question| %>
 
+			<!-- split answer into an array of words and downcase them -->
+			<% answer = question["answer"].downcase.split(" ") %>
 
-	<% whole_question_id = "question_id_ question_number += 1" %>
-	<% individual_question_id = "question_id_+ question_mask_number += 1"%>
-	<% value_id = "value_id_"%> <%= value_number += 1%>
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$<%= question["value"] %></h3></br>
+				</div>
+				<div class="individual_question">
+					<%# questions_group = [] %>
+					<h2 class="individual_question_id"><%= question["question"] %></br></h2>
+					<!-- <h3>This answer contains <%= answer.length %> <%# answer.length === 1 ? "word" : "words"%></h3> -->
 
-	<%= value_id %>
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+					<% clean_word_array = [] %>
+					<% answer.each do |word| %>
+						<!-- remove any html tags, and non-essential words -->
+					<% clean_word = word.gsub(/(<\/?[a-zA-Z]+>)|\W(a)\s|\s(the)\s|\s(and)\s|\s(an)\s|\s(of)\s|\s(it)\s|\s(in)\s|\s(on)\s|\s(you)\s|\s(your)\s|\s(to)\s|\s+/i, "")%>
+						<% clean_word_array << clean_word %>
+					<% end %>
+					<!-- rejoin answer into a string -->
+					<%= clean_word_array.join(" ")%>
+				</div>
 
-
-	<!-- split answer into an array of words and downcase them -->
-	<% answer = question["answer"].downcase.split(" ") %>
-	
-	<!-- give each question mask the same class name as the question itself -->
-	<div class="whole_question <% whole_question_id %>">	
-	<!-- show the word "question" instead of the actual question -->
-		<h2 class="<% whole_question_id %>">QUESTION</h2>
-		<div class="value">	
-			<h3 class="<%whole_question_id%> value">Value: $<%= question["value"] %></h3></br>
 		</div>
-		<!-- give each question a unique id that increments from 0	 -->
-		<div class="individual_question <%individual_question_id%>">
-			<h2 class="individual_question_id"><%= question["question"] %></br></h2>
-			<h3>This answer contains <%= answer.length %> <%= answer.length == 1 ? "word" : "words"%></h3>
-			<input type="text" id="user_answer" placeholder="ANSWER HERE">
-			<button id="submit_answer_button">Final Answer!</button>
-
-
-		</div>
-	</div>
-<!-- answer- is hidden by default via jquery -->
-	<div class="hidden_answer">
-		<% answer.each do |word| %>
-		<!-- remove any html tags, remove all punctuation marks -->
-		<% word = word.gsub(/(<\/?[a-zA-Z]+>)|[\?\,\.\/\(\)\\\"]+i|/i, "")%>
-		<!-- replace & with 'and' -->
-		<%word = word.gsub(/&/, "and")%>	
-		<div class="revealed_answer">
-		</div>
-		<% end %>
-<!-- rejoin answer into a string -->
-		<%revealed_answer = answer.join(" ") %>
-		<%= revealed_answer %>
-	</div>
 	<% end %>
-	<% end %>
+	<div id="reveal_answer">
+
+	</div>
+
+</div>
+<% end %>
 <!-- call the method -->
-	<%render_results(@response) %>
-	<%render_results(@response2) %>
-	<%render_results(@response3) %>
+<%render_results(@response) %>
+<%render_results(@response2) %>
+<%render_results(@response3) %>
 
-	<h2 id="running_score">Running Score: </h2> 
-	<h2 id="total_score">Total Score: </h2>
-</body>
+<h2>Score: $<span id="running_score">0</span></h2> 
+<button id="new_game">New Game</button>
+
+<!-- <h2>Total Score: $<span id="total_score">0</span></h2>
+ --></body>
 </html>

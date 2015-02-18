@@ -3,10 +3,9 @@ class CreateContestants < ActiveRecord::Migration
     create_table :contestants do |t|
     	t.string :fname
     	t.string :lname
-    	t.string :email
-    	t.integer :running_score
+    	t.string :username
+    	t.string :password_digest
     	t.integer :total_score
-    	t.string :password_digest	
     end
   end
 end

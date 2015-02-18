@@ -5,13 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Question.destroy_all
+Game.destroy_all
 Contestant.destroy_all
 
 
-Question.create({question_id: 27862, category_title: "bird words", value: 300, contestant_id: 1})
-Question.create({question_id: 68782, category_title: "the art world", value: 800, contestant_id: 2})
+Game.create({contestant_id: 1, game_score: 1400})
+Game.create({contestant_id: 2, game_score: 2500})
 
 
-Contestant.create({fname: "Sylvia", lname: "Blender", email: "sylvib@gmail.com", password_digest: "password", running_score: 1200, total_score: 1200})
-Contestant.create({fname:"Daniel", lname: "Scarry", email: "scarydanny@gmail.com", password_digest: "password", running_score: 600, total_score: 1000})
+Contestant.create({fname: "Sylvia", lname: "Blender", username: "sylvi", email: "sylvib@gmail.com", password_digest: "password", total_score: 20000})
+Contestant.create({fname:"Daniel", lname: "Scarry", username: "scary", email: "scarydanny@gmail.com", password_digest: "password", total_score: 13000})

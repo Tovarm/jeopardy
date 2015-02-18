@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>NewContestant</title>
+</head>
+<body>
+
+<h2>Create a new user profile</h2>
+	<form method="POST" action="/contestants">
+
+  <label>First Name
+	  <input type="text" name="fname" id="fname" />
+	</label></br>
+
+	<label>Last Name
+	  <input type="text" name="lname" id="lname" />
+	</label></br>
+
+	<label>Username
+	  <input type="text" name="username" id="username" />
+	</label></br>
+
+	<label>Password
+	  <input type="password" name="password" id="password" />
+	</label></br>
+
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token() %>">
+  <input type="submit" value="Create" />
+</form>
+
+</body>
+</html>

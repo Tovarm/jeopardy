@@ -45,14 +45,12 @@ h1 {
   text-align: center;
 }
 
-.hidden_answer {
-}
 
 .value {
   padding: 5px;
   width: 100px;
   margin: 5px;
-  border: solid black 2px;
+  /*border: solid black 2px;*/
 }
 
 .question {
@@ -68,8 +66,14 @@ h1 {
   border: solid black 2px;
 }
 
-.individual_question {
-  width: 200px;
-  margin: 5px;
+.reveal_answer_wrong {
+  font-size: 30px;
+  color: red;
+  font-weight: bold;
 }
 
+.reveal_answer_right {
+  font-size: 30px;
+  color: green;
+  font-weight: bold;
+}
