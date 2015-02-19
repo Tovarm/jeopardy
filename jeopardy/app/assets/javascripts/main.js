@@ -118,26 +118,7 @@ function right_answer(){
   //   })
   
   })
-
-// function postToDb(attrs){
-//   console.log("hit postToDb!");
-//   $.ajax({
-//     url: '/entries',
-//     method: 'POST',
-//     dataType: 'json',
-//     data: JSON.stringify(attrs)
-//   }).done(function(data) {
-//     console.log(data);  
-//     postToDom(data);
-//   totalMoney = 0
-//   getTotalOwed();
-//   });
-// }
-
-
-
-
-
+});
 
   // tell user whether answer is right or wrong.
   //   if right
@@ -151,56 +132,3 @@ function right_answer(){
         //  display game over
             // display running score and post to post to database
             // display total score and post to database
-
-
- 
-});
-
-
-
-// $('.submit_answer_button').on('click', function(){
-
-// console.log("_----------------------------------------_")
-//   if(($value).attr('class') === $('.whole_question').attr('class')){
-//     console.log("they match!")
-//   } else {
-//     console.log("no match")
-//   }
-// console.log("_----------------------------------------_")
-// })
-
-
-
-
-  // running_score = running_score - parseInt($value.val(), 10);
-
-
-// adding to/ subtracting from running score
-
-
-
-
-
-// function postToDb(attrs){
-//   console.log("hit postToDb!");
-//   $.ajax({
-//     url: '/entries',
-//     method: 'POST',
-//     dataType: 'json',
-//     data: JSON.stringify(attrs)
-//   }).done(function(data) {
-//     console.log(data);  
-//     postToDom(data);
-//   totalMoney = 0
-//   getTotalOwed();
-//   });
-// }
-
-  //     $.ajax({
-  //       url: '/games',
-  //       method: 'GET',
-  //       dataType: 'json'
-  //     }).done(function(data) {
-  //       console.log(data)
-  //     })  
-  // });
