@@ -58,6 +58,8 @@ function right_answer(){
   $('#reveal_answer').append('<p>' + hidden_answer.toUpperCase() + '</br>Nice job! You just earned ' + $value.text() + '</p>').addClass('reveal_answer_right')
   $('#reveal_answer').show();
 }
+
+
 // ------------------------------------------------------------
 
   if(user_answer === ""){
@@ -66,7 +68,7 @@ function right_answer(){
   //----- else if(user_answer === hidden_answer) { -----
     else if(user_answer.localeCompare(hidden_answer) === 0){
       right_answer();
-    } else if(hidden_answer.indexOf(user_answer) > 0){
+    } else if(hidden_answer.indexOf(user_answer) >= 0){
       right_answer();
 
     } else if(user_answer != hidden_answer | user_answer.localeCompare(hidden_answer != 0 | hidden_answer.indexOf(user_answer) > 0)) {
@@ -99,24 +101,23 @@ function right_answer(){
         url: '/games'
       }).done(function(data){
         console.log(data);
-        $('.whole_question').empty();
-        for(var i = 0; i < $whole_question.length; i++ ){
-          $('.whole_question').append(data[i])
-        }
+        $('body').empty();
+        $('body').append(data);
       })
 
 
   // ajax post score to db
-    // $.ajax({
-    //   url: '/games',
-    //   method: 'POST',
-    //   dataType: 'json',
-    //   data: JSON.stringify({score: running_score})
-    // }).done(function(data){
-    //   console.log(data)
-    // })
+  // console.log("button clicked");
+  //   $.ajax({
+  //     url: '/games',
+  //     method: 'POST',
+  //     dataType: 'json',
+  //     data: JSON.stringify({score: running_score})
+  //   }).done(function(data){
+  //     console.log(data)
+  //   })
+  
   })
-
 
 // function postToDb(attrs){
 //   console.log("hit postToDb!");

@@ -18,4 +18,9 @@ class GamesController < ApplicationController
 		redirect_to "/games"
 	end
 
+	def show
+		@game = Game.all
+		@contestant = Contestant.all
+	end
+
 end

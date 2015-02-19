@@ -1,0 +1,637 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+	  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Jeopardy!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="./stylesheets/jumbotron.css" rel="stylesheet"> -->
+</head>
+<body>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+	    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Jeopardy!</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-default">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+  </div>
+
+
+
+	<div class="container">
+<div class="jumbotron">
+
+	<h1>Jeopardy!</h1>
+	<h2>Welcome [user]</h2>
+	<h2 id="status">You're on turn number <span id="which_round"> </span>!</h2>
+	<h2>Score so far: $<span id="running_score"> <%= 0 %></span></h2> 
+
+
+</div>
+	<!-- method to parse api results -->
+<!-- call the method -->
+	
+	<div class="row">
+ 	  <div class="col-md-4">
+		<h3><strong>LET&#39;S TALK</strong></h3></br>
+		</br>
+		
+		
+      <!-- Example row of columns -->
+ 
+		<div class="question_answer_pair">	
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$100</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">In 1958, this telegram company introduced Telex into the US providing a new system to send &amp; receive messages</br></h2>
+					<h3>This answer contains 2 words</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					western union
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$200</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">The 2 forms of dialing mechanisms are tone &amp; this</br></h2>
+					<h3>This answer contains 1 word</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					pulse
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$300</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">Long distance telephone service that crosses state lines comes under the auspices of this federal agency</br></h2>
+					<h3>This answer contains 2 words</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					the fcc
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$400</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">In 1877, this inventor, not Bell, designed a transmitter for the telephone allowing better clarity &amp; sound</br></h2>
+					<h3>This answer contains 1 word</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					edison
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">The founders of the Bell Telephone Company were Gardiner Hubbard, Thomas Sanders, Bell &amp; this assistant</br></h2>
+					<h3>This answer contains 2 words</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					(thomas) watson
+				</div>
+
+		</div>
+</div>
+
+	<div id="reveal_answer">
+
+	</div>
+
+</div>
+	
+	<div class="row">
+ 	  <div class="col-md-4">
+		<h3><strong>IT SOUNDS LIKE A LETTER</strong></h3></br>
+		</br>
+		
+		
+      <!-- Example row of columns -->
+ 
+		<div class="question_answer_pair">	
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$200</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">Yellow-banded colonizer</br></h2>
+					<h3>This answer contains 2 words</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					a bee
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$400</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">Famous Fonz utterance</br></h2>
+					<h3>This answer contains 1 word</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					&quot;ay!&quot;
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$600</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">A Parliamentary affirmative</br></h2>
+					<h3>This answer contains 1 word</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					aye
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$800</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">Commodity that&#39;s pretty steeped</br></h2>
+					<h3>This answer contains 1 word</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					tea
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$1000</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">An Ecclesiastical office such as a bishop&#39;s</br></h2>
+					<h3>This answer contains 2 words</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					a see
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$200</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">Yellow-banded colonizer</br></h2>
+					<h3>This answer contains 2 words</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					a bee
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$400</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">Famous Fonz utterance</br></h2>
+					<h3>This answer contains 1 word</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					&quot;ay!&quot;
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$600</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">A Parliamentary affirmative</br></h2>
+					<h3>This answer contains 1 word</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					aye
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$800</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">Commodity that&#39;s pretty steeped</br></h2>
+					<h3>This answer contains 1 word</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					tea
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$1000</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">An Ecclesiastical office such as a bishop&#39;s</br></h2>
+					<h3>This answer contains 2 words</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					a see
+				</div>
+
+		</div>
+</div>
+
+	<div id="reveal_answer">
+
+	</div>
+
+</div>
+	
+	<div class="row">
+ 	  <div class="col-md-4">
+		<h3><strong>SPORTS EVOLUTION</strong></h3></br>
+		</br>
+		
+		
+      <!-- Example row of columns -->
+ 
+		<div class="question_answer_pair">	
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$200</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">In the 1750s the original golf course here had 11 holes &amp; you played each of them twice</br></h2>
+					<h3>This answer contains 2 words</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					st. andrews
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$400</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">(Sarah of the Clue Crew delivers the clue from Utah Olympic Park, with Cheryl and Jimmy pushing her in a bobsled.)  Begun in the 1800s, the first bobsleds didn&#39;t have these--a garden rake was used instead</br></h2>
+					<h3>This answer contains 1 word</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					brakes
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">By the time the British discovered this sport in India around 1860, it used a ball, no longer a goat&#39;s or enemy&#39;s head</br></h2>
+					<h3>This answer contains 1 word</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					polo
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$800</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">(Cheryl of the Clue Crew slides a curling stone across the ice in the Utah Olympic Oval.)  Curling came to North America with Scottish soldiers who melted down these iron projectiles; today&#39;s stone is 40 pounds of polished granite</br></h2>
+					<h3>This answer contains 1 word</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					cannonballs
+				</div>
+
+		</div>
+
+			<!-- split answer into an array of words and downcase them -->
+
+			<!-- show the word "question" instead of the actual question -->
+			<div class="whole_question">	
+				<h2 class="whole_question_id">QUESTION</h2>
+				<div class="value">	
+					<h3 class="value_id">$1000</h3></br>
+				</div>
+				<div class="individual_question">
+					<h2 class="individual_question_id">The 18th century Broughton rules were intended to lessen the brutality of this sport</br></h2>
+					<h3>This answer contains 1 word</h3>
+
+				<input type="text" class="user_answer whole_question_id" placeholder="ANSWER HERE">
+				<button class="submit_answer_button whole_question_id">That's my answer and I'm sticking with it</button>
+				</div>
+				<!-- answer is hidden by default in main.js -->
+				<div class="hidden_answer">
+						<!-- remove any html tags, and non-essential words -->
+					<!-- rejoin answer into a string -->
+					boxing
+				</div>
+
+		</div>
+</div>
+
+	<div id="reveal_answer">
+
+	</div>
+
+</div>
+
+<button id="new_game">New Game</button>
+
+ 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<!-- <h2>Total Score: $<span id="total_score">0</span></h2>
+ --></body>
+</html>
+
+</body>
+</html>

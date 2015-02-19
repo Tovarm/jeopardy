@@ -8,9 +8,15 @@ Rails.application.routes.draw do
 resources :games
 resources :contestants
 
+  get '/leaderboard' => 'leaderboard#index'
 
+  get 'session/new' => 'session#new'
 
-#          Prefix Verb   URI Pattern                     Controller#Action
+  post 'session' => 'session#create'
+
+  get 'session/delete' => 'session#destroy'
+
+#               Prefix Verb   URI Pattern                     Controller#Action
 #            root GET    /                               welcome#index
 #           games GET    /games(.:format)                games#index
 #                 POST   /games(.:format)                games#create
@@ -28,7 +34,10 @@ resources :contestants
 #                 PATCH  /contestants/:id(.:format)      contestants#update
 #                 PUT    /contestants/:id(.:format)      contestants#update
 #                 DELETE /contestants/:id(.:format)      contestants#destroy
-
+#     leaderboard GET    /leaderboard(.:format)          leaderboard#index
+#     session_new GET    /session/new(.:format)          session#new
+#         session POST   /session(.:format)              session#create
+#  session_delete GET    /session/delete(.:format)       session#destroy
 
 
   # Example of regular route:
