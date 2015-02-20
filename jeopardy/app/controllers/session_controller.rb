@@ -10,10 +10,11 @@ class SessionController < ApplicationController
   # create a new session for the user
   def create
     contestant = Contestant.find_by(username: params[:username])
-    if couple && couple.authenticate(params[:password])
-      session[:couple_id] = couple.id
-      redirect_to "/landing"
+    if contestant && contestant.authenticate(params[:password])
+      session[:contestant_id] = contestant.id
+      redirect_to "/games/contestant/#{contestant.id}"
     else
+      binding.pry
       redirect_to "/session/new"
     end
   end
@@ -22,7 +23,7 @@ class SessionController < ApplicationController
   # log out of a user's session
   def destroy
     reset_session
-    redirect_to "/"
+    redirect_to "/session/new"
   end
 
 end

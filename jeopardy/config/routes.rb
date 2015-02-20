@@ -3,18 +3,20 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'session#new'
 
-resources :games
-resources :contestants
+  resources :games
+  resources :contestants
+  
+  get '/session/new'
 
   get '/leaderboard' => 'leaderboard#index'
 
-  get 'session/new' => 'session#new'
+  post '/session' => 'session#create'
 
-  post 'session' => 'session#create'
+  get '/session/delete' => 'session#destroy'
 
-  get 'session/delete' => 'session#destroy'
+  get '/games/contestant/:id' => 'games#show'
 
 #               Prefix Verb   URI Pattern                     Controller#Action
 #            root GET    /                               welcome#index

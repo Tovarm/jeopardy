@@ -1,8 +1,10 @@
 class LeaderboardController < ApplicationController
 
 	def index
-		@contestant = Contestant.all
-    @game = Game.all  
+ 		@contestant = Contestant.find(params["id"])
+binding.pry
+		# @contestant = Contestant.all
+    @game = Game.all 
   end
 
 end

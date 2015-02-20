@@ -13,5 +13,5 @@ Game.create({contestant_id: 1, game_score: 1400})
 Game.create({contestant_id: 2, game_score: 2500})
 
 
-Contestant.create({fname: "Sylvia", lname: "Blender", username: "sylvi", email: "sylvib@gmail.com", password_digest: "password", total_score: 20000})
-Contestant.create({fname:"Daniel", lname: "Scarry", username: "scary", email: "scarydanny@gmail.com", password_digest: "password", total_score: 13000})
+Contestant.create({name: "Tova", username: "tova", email: "tovamosk@gmail.com", password_digest: "password", total_score: 20000})
+Contestant.create({name:"Daniel", username: "danny", email: "danny@gmail.com", password_digest: "password", total_score: 13000})
